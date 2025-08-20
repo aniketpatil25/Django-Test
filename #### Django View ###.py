@@ -1,4 +1,4 @@
-# core/views.py
+###views.py
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
@@ -75,3 +75,4 @@ class MyProjects(APIView):
             WHERE pu.user_id = %s
         """, [user_id], fetch=True)
         return Response(projects)
+

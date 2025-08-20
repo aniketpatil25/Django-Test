@@ -1,11 +1,12 @@
 ### Django Urls ###
+
 from django.urls import path
-from . import views
+from .views import ClientRegister, ClientList, ClientDetail, ProjectAdd, MyProjects
 
 urlpatterns = [
-    path("clients/register/", views.register_client),
-    path("clients/", views.get_clients),
-    path("clients/<int:client_id>/", views.update_client),
-    path("clients/<int:client_id>/projects/", views.add_project),
-    path("my-projects/", views.my_projects),
+    path("clients/register/", ClientRegister.as_view()),
+    path("clients/", ClientList.as_view()),
+    path("clients/<int:client_id>/", ClientDetail.as_view()),
+    path("clients/<int:client_id>/projects/", ProjectAdd.as_view()),
+    path("my-projects/", MyProjects.as_view()),
 ]
